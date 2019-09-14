@@ -1,0 +1,36 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculo média</title>
+  <script>
+    function Calcular(){
+    var Nota1 = document.getElementsById('Nota1');
+    var Nota2 = document.getElementsById('Nota2');
+    var media = (Nota1+Nota2)/2;
+    if (media >= 60 ) {
+      document.getElementsId('calculo').style.color = "#198704";
+      document.getElementsById('calculo').innerHTML = media;
+    } else {
+      document.getElementsById('calculo').style.color = "#ed0707";
+      document.getElementsById('calculo').innerHTML = media;
+    }
+    }
+  </script>  
+</head>
+<body>
+  <form action="Calculo.php" method="post">
+    <input type="number" name="Nota1" require id="Nota1">
+    <input type="number" name="Nota2" require id="Nota2">
+    <input type="submit" value="Calcular PHP"> 
+  </form>
+  <input type="button" value="Cadastrar JS" onkeypress="Calcular();">
+  <p id="calculo"></p>
+</body>
+</html>
